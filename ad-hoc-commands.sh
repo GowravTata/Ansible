@@ -16,3 +16,17 @@ ansible all --list-hosts
 
 # To gather facts
 ansible all -m gather_facts
+
+
+#
+ansible all -m yum -a update_cache=true --become --ask-become-pass
+
+# Command to copy the SSH key to the remote server
+ssh-copy-id -i ~/.ssh/id_ed25519.pub server_name
+
+
+#  This command will update the package cache oon all hosts like apt update 
+ansible all -m apt -a update_cache=true --become --ask-become-pass
+
+# Command to install nginx package on all hosts
+ansible all -m yum -a name=nginx --become --ask-become-pass
