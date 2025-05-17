@@ -1,0 +1,10 @@
+---
+- name: Create a file on EC2 instances
+  hosts: ec2_instances
+  become: true  
+  tasks:
+    - name: Create a file with specific content
+      copy:
+        dest: "/home/ec2-user/file.txt"
+        content: "My name is Bond"
+        mode: '0644' 

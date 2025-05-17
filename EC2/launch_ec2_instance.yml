@@ -1,0 +1,20 @@
+# provision_ec2.yml
+- name: Provision EC2 instance
+  hosts: localhost
+  gather_facts: no
+  collections:
+    - amazon.aws
+
+  tasks:
+    - name: Launch EC2 instance
+      amazon.aws.ec2_instance:
+        name: "MyServer"
+        key_name: Node
+        instance_type: "t2.micro"
+        image_id: "ami-0953476d60561c955" 
+        region: "us-east-1"
+        wait: yes
+        count: 1
+        security_group: default
+        tags:
+          Environmen
