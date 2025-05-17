@@ -4,7 +4,7 @@
   become: true
   tasks:
   
-  - name: install apache2 package
+  - name: remove nginx package
     yum:
       name: nginx 
       state: absent 
