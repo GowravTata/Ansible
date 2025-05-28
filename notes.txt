@@ -1,1 +1,9 @@
+For any server enable SSH Login, bu doing the following steps
+
+# To change the password
+sudo passwd ec2-user 
+
+Enable PasswordAuthentication, turn it on in /etc/ssh/sshd_config 
+
+
 Create a ansible.cfg file which can have all the data in that, such as inventory and location of private key file
