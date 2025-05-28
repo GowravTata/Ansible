@@ -7,4 +7,6 @@
   - name: install git
     yum:
       name: git 
+    #   If the state is absent the packages gets removed
+      state: absent
     
