@@ -1,5 +1,6 @@
 [linux]
-server_name
+server_1
+server_2
 
 [linux:vars]
 ansible_user=ec2-user
